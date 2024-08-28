@@ -1433,7 +1433,7 @@ class SqlaTable(
 
     @property
     def time_grain_sqla(self) -> list[tuple[Any, Any]]:
-        return [(g.duration, g.name) for g in self.database.grains() or []]
+        return [(g.duration, g.label) for g in self.database.grains() or []]
 
     @property
     def data(self) -> dict[str, Any]:
